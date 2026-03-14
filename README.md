@@ -1,4 +1,4 @@
-# Bài tập 6.1:
+# Bài tập 7.1:
 
 *Thông tin sinh viên:*
 * *Họ và tên:* Nguyễn Văn Trung

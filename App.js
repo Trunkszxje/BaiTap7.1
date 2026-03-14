@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
@@ -13,19 +14,19 @@ function LoginScreen({ navigation }) {
 
   const validatePhone = () => {
     const regex = /^0[0-9]{9}$/;
-    const cleaned = phone.replace(/\s/g, '');
+
+    const cleaned = phone.replace(/\s/g,'');
 
     if (!regex.test(cleaned)) {
-      setError("Số điện thoại không đúng định dạng");
+      alert("Số điện thoại không đúng định dạng");
     } else {
-      setError("");
       navigation.navigate("Home", { phone: cleaned });
     }
   };
 
   const formatPhone = (text) => {
 
-    const cleaned = text.replace(/\D/g, '');
+    const cleaned = text.replace(/\D/g,'');
 
     let formatted = cleaned;
 
@@ -47,6 +48,7 @@ function LoginScreen({ navigation }) {
     } else {
       setError("");
     }
+
   };
 
   return (
@@ -70,6 +72,8 @@ function LoginScreen({ navigation }) {
         title="Tiếp tục"
         onPress={validatePhone}
       />
+
+      <StatusBar style="auto" />
 
     </View>
   );
